@@ -1,0 +1,50 @@
+@mixin dFlex($jc: center, $ai: center, $g: 0px) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $g;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  @include dFlex($jc: space-between);
+  height: 80px;
+  >div {
+    margin: 0;
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+}
+
+.logo {
+  &:hover {
+    cursor: pointer;
+  }
+  > img {
+    width: 120px;
+  }
+}
+
+.navLinks {
+  @include dFlex($jc: space-between);
+  width: 240px;
+  > a {
+    &:hover {
+      cursor: pointer;
+      color: #c0620d;
+    }
+  }
+}
+
+.active {
+  color: #c0620d;
+  text-decoration: underline #8a313a 2px !important;
+}
+
+.navA {
+  text-decoration: none;
+}

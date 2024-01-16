@@ -1,0 +1,74 @@
+@mixin dFlex($fd: row, $jc: center, $ai: center, $g: 0px) {
+  display: flex;
+  flex-direction: $fd;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $g;
+}
+
+* {
+  overflow-x: clip;
+}
+
+section {
+  @include dFlex($fd: column, $ai: start, $g: 20px);
+  position: relative;
+  z-index: 6;
+  >div{
+    margin: 0;
+  }
+}
+
+.topPortfolio {
+  @include dFlex($jc: start, $g: 40px);
+  
+}
+
+.shadow {
+  position: absolute;
+  top: -200px;
+  right: -360px;
+ background-color: transparent;
+}
+
+p {
+  padding-left: 120px;
+  padding-bottom: 40px;
+}
+
+h1 {
+  font-size: 80px;
+}
+
+.lineRed {
+  width: 80px;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #e24244;
+}
+
+.projectsDiv {
+  @include dFlex($jc:flex-start,$g: 20px);
+  flex-wrap: wrap;
+  padding-left: 120px;
+  padding-right: 120px;
+  z-index: 8;
+  background-color: transparent;
+  width: 100%;
+  > div {
+    width: max-content;
+    border-radius: 16px;
+    margin: 0;
+    &:hover {
+      cursor: pointer;
+    
+  }
+}
+}
+
+.shadowBottom {
+  position: absolute;
+  left: -600px;
+  bottom: -200px;
+  background-color: transparent;
+}

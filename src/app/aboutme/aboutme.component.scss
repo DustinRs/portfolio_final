@@ -1,0 +1,68 @@
+@mixin dFlex($fd: row, $jc: center, $ai: center, $g: 0px) {
+  display: flex;
+  flex-direction: $fd;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $g;
+}
+
+
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 80px;
+    padding-top: 40px;
+    padding-bottom: 40px; 
+    position: relative;
+    z-index: 2;
+    background-color: transparent;
+}
+
+.gapText {
+    @include dFlex($fd:column,$jc:flex-start, $g:24px);
+    position: relative;
+    z-index: 3;
+    background-color: transparent;
+    padding-left: 120px;
+    width: 60%;
+}
+
+h1 {
+    font-size: 80px;
+}
+
+.profilePicture {
+    position: relative;
+    right: 120px;
+    background-color: transparent;
+}
+
+.profileBack {
+    position: relative;
+    width: 100%;
+    top: 64px;
+    right: -56px;
+    z-index: 3;
+    background-color: transparent;
+}
+
+.profilePic {
+    position: absolute;
+    top: 64px;
+    right: 0;
+    z-index: 4;
+    width: 82%;
+    background-color: transparent;
+}
+
+.aboutMeText{
+    @include dFlex($jc:flex-start, $g: 16px);
+    >img {
+        width: 120px;
+    }
+}
+
+
+
+

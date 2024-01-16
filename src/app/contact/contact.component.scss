@@ -1,0 +1,214 @@
+@mixin dFlex($fd: row, $jc: center, $ai: center, $g: 0px) {
+  display: flex;
+  flex-direction: $fd;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $g;
+}
+
+*{
+    overflow: hidden;
+}
+
+section {
+  @include dFlex($jc: space-between, $ai: flex-start);
+  position: relative;
+  padding-right: 120px;
+  padding-bottom: 80px;
+}
+.topContact {
+  @include dFlex($jc: flex-end, $g: 24px);
+  position: relative;
+  right: 0;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  >h1{
+    margin: 0;
+  }
+}
+
+h1 {
+  font-size: 80px;
+}
+
+.lineContact {
+  width: 560px;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #e86f00;
+  margin: 0;
+}
+
+.leftSection {
+  @include dFlex($fd: column, $jc: flex-start, $ai: flex-start, $g: 24px);
+  margin: 0;
+  >div{
+    margin: 0;
+  }
+}
+
+.lineDiv {
+  @include dFlex($jc: flex-start, $g: 24px);
+  position: relative;
+  left: 0;
+}
+
+.linePink {
+  width: 96px;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #d61ce6;
+}
+
+.gotProblem {
+  @include dFlex($ai: flex-start, $fd: column, $g: 24px);
+  padding-left: 120px;
+  >div {
+    margin: 0;
+  }
+}
+
+.rightSection {
+  @include dFlex($fd: column, $g: 24px);
+  padding-bottom: 16px;
+  margin: 0;
+}
+
+form {
+  @include dFlex($ai: flex-start, $fd: column, $g: 24px);
+  > input {
+    border: 1px solid #89323b;
+    border-style: inset;
+    border-radius: 8px;
+    width: 640px;
+    height: 40px;
+    color: white;
+    padding: 4px;
+    &:hover {
+      border-color: #e86f00;
+    }
+  }
+  > textarea {
+    border: 1px solid #89323b;
+    border-style: inset;
+    border-radius: 8px;
+    width: 640px;
+    height: 200px;
+    resize: none;
+    color: white;
+    padding: 8px 4px 8px 4px;
+    z-index: 2;
+    &:hover {
+      border-color: #e86f00;
+    }
+  }
+}
+
+.checkBox {
+  @include dFlex($g: 8px);
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  >input{
+    position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  }
+  >span{
+    font-size: 12px;
+    >span{
+      >a{
+        color: #89323b;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+      
+    }
+  }
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background-color: transparent;
+  border: 1px solid #e86f00;
+}
+
+.checkBox:hover input ~ .checkmark {
+  background-color: transparent;
+}
+
+.checkBox input:checked ~ .checkmark {
+  background-color: transparent;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkBox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkBox .checkmark:after {
+  left: 4px;
+  top: 0px;
+  width: 5px;
+  height: 10px;
+  border: solid #e86f00;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+
+button {
+  border: unset;
+  border-radius: 8px;
+  background-color: #e86f00;
+  padding: 8px 16px 8px 16px;
+  transition: 0.2s ease-in-out 0s;
+  z-index: 3;
+  margin: 0;
+  &:hover {
+    cursor: pointer;
+    background-color: #e24244;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+}
+
+.shadowBottomContact {
+    position: absolute;
+    right: -300px;
+    bottom: -825px;
+    background-color: transparent;
+    z-index: 1;
+}
+
+.goUpIcon {
+  position: absolute;
+  bottom: 40px;
+  right: 120px;
+  width: fit-content;
+  z-index: 4;
+  background-color: transparent;
+  >img{
+    background-color: transparent;
+  }
+}

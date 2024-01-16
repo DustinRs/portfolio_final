@@ -1,0 +1,87 @@
+@mixin dFlex($fd: row, $jc: center, $ai: center, $g: 0px) {
+  display: flex;
+  flex-direction: $fd;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $g;
+}
+
+section {
+  @include dFlex($jc: space-between, $g: 80px);
+  padding: 80px 0 80px 120px;
+  position: relative;
+  z-index: 2;
+  background-color: transparent !important;
+}
+
+div {
+  background-color: transparent !important;
+}
+
+h1 {
+  font-size: 80px;
+}
+
+.iconsSkills {
+  @include dFlex($fd: column, $ai: flex-start, $g: 80px);
+  z-index: 3;
+  margin: 0;
+}
+
+.rows {
+  @include dFlex($jc: flex-start, $ai: center, $g: 80px);
+  margin: 0;
+}
+
+.iconSkill {
+  @include dFlex($fd: column, $g: 8px);
+  > img {
+    margin: 0;
+    background-color: transparent;
+  }
+  > span {
+    margin: 0;
+    background-color: transparent;
+  }
+}
+
+.skillRight {
+  @include dFlex($fd: column, $ai: flex-start, $g: 40px);
+  padding: 24px 0 24px 24px;
+  z-index: 3;
+  margin: 0;
+}
+
+.skillHead {
+  @include dFlex($jc: space-between, $g: 40px);
+}
+
+.skillLine {
+  width: 300px;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #d61ce6 !important;
+}
+
+button {
+  border: unset;
+  border-radius: 8px;
+  background-color: #e86f00;
+  padding: 8px 16px 8px 16px;
+  transition: 0.2s ease-in-out 0s;
+  &:hover {
+    cursor: pointer;
+    background-color: #e24244;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+}
+
+.vector {
+  position: absolute;
+  top: -170px;
+  left: 0;
+  z-index: 2;
+  background-color: transparent;
+  width: 100%;
+}
