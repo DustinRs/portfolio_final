@@ -75,32 +75,47 @@ h1 {
 }
 
 form {
-  @include dFlex($ai: flex-start, $fd: column, $g: 24px);
+  padding-bottom: 16px;
+  @include dFlex($fd: column, $g: 24px);
   > input {
-    border: 1px solid #89323b;
+    border: 2px solid #89323b;
     border-style: inset;
     border-radius: 8px;
     width: 640px;
     height: 40px;
-    color: white;
     padding: 4px;
     z-index: 2;
     &:hover {
       border-color: #e86f00;
     }
+    &::placeholder {
+      color: white !important;
+    }
+    &:focus {
+      outline: none;
+      background-color: transparent!important;
+      border: 2px solid #e86f00!important;
+    }
   }
   > textarea {
-    border: 1px solid #89323b;
+    border: 2px solid #89323b;
     border-style: inset;
     border-radius: 8px;
     width: 640px;
     height: 200px;
     resize: none;
-    color: white;
     padding: 8px 4px 8px 4px;
     z-index: 2;
     &:hover {
       border-color: #e86f00;
+    }
+    &::placeholder {
+      color: white !important;
+    }
+    &:focus {
+      outline: none;
+      background-color: transparent!important;
+      border: 2px solid #e86f00!important;
     }
   }
 }
@@ -116,6 +131,8 @@ form {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  z-index: 2;
+  background-color: transparent;
   >input{
     position: absolute;
   opacity: 0;
@@ -125,6 +142,7 @@ form {
   }
   >span{
     font-size: 12px;
+    background-color: transparent;
     >span{
       >a{
         color: #89323b;
