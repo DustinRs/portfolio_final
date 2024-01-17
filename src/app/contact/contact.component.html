@@ -29,21 +29,21 @@
   </div>
 
   <div class="rightSection">
-    <form id="myForm" >
+    <form id="myForm" (submit)="sendMail()" method="post" ngNativeValidate #myForm>
       
-      <input type="text" id="name" formControlName="name" required placeholder="Your name" />
-      <input type="email" id="email" required placeholder="Your email" />
-      <textarea id="message" required placeholder="Your message"></textarea>
+      <input type="text" name="name" required placeholder="Your name" #nameField/>
+      <input type="email" name="email" required placeholder="Your email" #emailField/>
+      <textarea name="message" required placeholder="Your message" #messageField></textarea>
       <label class="checkBox">
-        <input type="checkbox" id="privacyCheck" />
+        <input type="checkbox" name="checkbox" #checkboxField />
         <span class="checkmark"></span>
         <span>
           I've read the <span> <a href="">privacy policy</a> </span> and agree
           to the processing of my data as outlined.
         </span>
       </label>
+      <button #sendButton>Send message :)</button>
     </form>
-    <button id="submitButton" >Send message :)</button>
   </div>
   <a class="goUpIcon" href="#"><img src="assets/icons/goUp.png" alt=""></a>
 </section>

@@ -84,6 +84,7 @@ form {
     height: 40px;
     color: white;
     padding: 4px;
+    z-index: 2;
     &:hover {
       border-color: #e86f00;
     }
