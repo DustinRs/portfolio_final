@@ -28,29 +28,31 @@ ngOnInit(): void {
     console.log('Sending mail', this.myForm);
     let nameField = this.nameField.nativeElement;
     let messageField = this.messageField.nativeElement;
-    let sendButton = this.sendButton.nativeElement;
+    let sendButton = (document.getElementById('sendButton') as HTMLInputElement);
     
     nameField.disabled = true;
     messageField.disabled = true;
-    sendButton.disabled = true;
+    sendButton.setAttribute('disabled', 'true');
     //Animation anzeigen
 
     let fd = new FormData();
     fd.append('name', nameField.value);
     fd.append('message', messageField.value);
     // senden
-    await fetch('https://dustin-rohrschneider.developerakademie.net/send_mail/send_mail.php',
+    await fetch('https://dustin-rohrschneider.de/dustin-rohrschneider.de/send_mail/send_mail.php',
     {
       method:'POST',
       body: fd
     }
     );
     
-
-    //Text anzeigen: Nachricht gesendet.
-    nameField.disabled = false;
+    setTimeout(() => {
+      nameField.disabled = false;
     messageField.disabled = false;
     sendButton.disabled = false;
+    }, 2000);
+    //Text anzeigen: Nachricht gesendet.
+    
   }
 
   
