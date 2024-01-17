@@ -29,22 +29,71 @@
   </div>
 
   <div class="rightSection">
-    <form autocomplete="off" id="myForm" (submit)="sendMail()" method="post" ngNativeValidate #myForm>
+    <form
+      autocomplete="off"
+      id="myForm"
+      (submit)="sendMail()"
+      method="post"
+      ngNativeValidate
+      #myForm
+    >
+    <label id="labelName"><input
+        autocomplete="off"
+        id="name"
+        (click)="addNameListener()"
+        type="text"
+        name="name"
+        required
+        placeholder="Your name"
+        #nameField
+      /><i><img id="iconName" src="" alt="" /></i></label>
       
-      <input autocomplete="off" type="text" name="name" required placeholder="Your name" #nameField/>
-      <input autocomplete="off" type="email" name="email" required placeholder="Your email" #emailField/>
-      <textarea name="message" required placeholder="Your message" #messageField></textarea>
+      <div id="nameRequired">
+        <span>Your name is required</span>
+      </div>
+      <label id="labelEmail"><input
+        autocomplete="off"
+        id="email"
+        (click)="addEmailListener()"
+        type="email"
+        name="email"
+        required
+        placeholder="Your email"
+        #emailField
+      /><i><img id="iconEmail" src="" alt="" /></i></label>
+      
+      <div id="emailRequired">
+        <span>Your email is required</span>
+      </div>
+      <div></div>
+      <label id="labelMessage" class="messageDiv">
+        <textarea
+          id="message"
+          name="message"
+          (click)="addMessageListener()"
+          required
+          placeholder="Your message"
+          #messageField
+        ></textarea
+        ><i><img id="iconMessage" src="" alt="" /></i>
+      </label>
+
+      <div id="messageRequired">
+        <span>Your message is required</span>
+      </div>
       <label class="checkBox">
         <input type="checkbox" name="checkbox" required #checkboxField />
         <span class="checkmark"></span>
         <span>
-          I've read the <span> <a href="privacyPolicy" target="_blank">privacy policy</a> </span> and agree
-          to the processing of my data as outlined.
+          I've read the
+          <span>
+            <a href="privacyPolicy" target="_blank">privacy policy</a>
+          </span>
+          and agree to the processing of my data as outlined.
         </span>
       </label>
       <button #sendButton>Send message :)</button>
     </form>
   </div>
-  <a class="goUpIcon" href="#"><img src="assets/icons/goUp.png" alt=""></a>
+  <a class="goUpIcon" href="#"><img src="assets/icons/goUp.png" alt="" /></a>
 </section>
-

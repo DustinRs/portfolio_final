@@ -6,8 +6,8 @@
   gap: $g;
 }
 
-*{
-    overflow: hidden;
+* {
+  overflow: hidden;
 }
 
 section {
@@ -22,7 +22,7 @@ section {
   right: 0;
   padding-top: 80px;
   padding-bottom: 80px;
-  >h1{
+  > h1 {
     margin: 0;
   }
 }
@@ -42,7 +42,7 @@ h1 {
 .leftSection {
   @include dFlex($fd: column, $jc: flex-start, $ai: flex-start, $g: 24px);
   margin: 0;
-  >div{
+  > div {
     margin: 0;
   }
 }
@@ -63,7 +63,7 @@ h1 {
 .gotProblem {
   @include dFlex($ai: flex-start, $fd: column, $g: 24px);
   padding-left: 120px;
-  >div {
+  > div {
     margin: 0;
   }
 }
@@ -75,47 +75,85 @@ h1 {
 }
 
 form {
+  position: relative;
   padding-bottom: 16px;
-  @include dFlex($fd: column, $g: 24px);
-  > input {
-    border: 2px solid #89323b;
-    border-style: inset;
-    border-radius: 8px;
-    width: 640px;
-    height: 40px;
-    padding: 4px;
+  @include dFlex($fd: column);
+  > label {
+    position: relative;
     z-index: 2;
-    &:hover {
-      border-color: #e86f00;
+    background-color: transparent;
+    margin-bottom: 25px;
+    > i {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background-color: transparent;
+      >img{
+        background-color: transparent;
+      }
     }
-    &::placeholder {
-      color: white !important;
-    }
-    &:focus {
-      outline: none;
-      background-color: transparent!important;
-      border: 2px solid #e86f00!important;
+    > input {
+      border: 2px solid #89323b;
+      border-style: inset;
+      border-radius: 8px;
+      width: 640px;
+      height: 40px;
+      padding: 4px;
+      z-index: 2;
+      &:hover {
+        border-color: #e86f00;
+      }
+      &::placeholder {
+        color: white !important;
+      }
+      &:focus {
+        outline: none;
+      }
     }
   }
-  > textarea {
-    border: 2px solid #89323b;
-    border-style: inset;
-    border-radius: 8px;
-    width: 640px;
-    height: 200px;
-    resize: none;
-    padding: 8px 4px 8px 4px;
+  > label {
+    position: relative;
     z-index: 2;
-    &:hover {
-      border-color: #e86f00;
+    background-color: transparent;
+    margin-bottom: 25px;
+    > i {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background-color: transparent;
+      >img{
+        background-color: transparent;
+      }
     }
-    &::placeholder {
-      color: white !important;
+    > textarea {
+      border: 2px solid #89323b;
+      border-style: inset;
+      border-radius: 8px;
+      width: 640px;
+      height: 200px;
+      resize: none;
+      padding: 8px 4px 8px 4px;
+      z-index: 2;
+      &:hover {
+        border-color: #e86f00;
+      }
+      &::placeholder {
+        color: white !important;
+      }
+      &:focus {
+        outline: none;
+        border-color: #e86f00;
+      }
     }
-    &:focus {
-      outline: none;
-      background-color: transparent!important;
-      border: 2px solid #e86f00!important;
+  }
+  > div {
+    display: none;
+    text-align: start;
+    width: 100%;
+    > span {
+      font-size: 12px;
+      margin: 0;
+      color: red;
     }
   }
 }
@@ -133,24 +171,23 @@ form {
   user-select: none;
   z-index: 2;
   background-color: transparent;
-  >input{
+  > input {
     position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
   }
-  >span{
+  > span {
     font-size: 12px;
     background-color: transparent;
-    >span{
-      >a{
+    > span {
+      > a {
         color: #89323b;
-        &:hover{
+        &:hover {
           text-decoration: underline;
         }
       }
-      
     }
   }
 }
@@ -194,8 +231,6 @@ form {
   transform: rotate(45deg);
 }
 
-
-
 button {
   border: unset;
   border-radius: 8px;
@@ -213,11 +248,11 @@ button {
 }
 
 .shadowBottomContact {
-    position: absolute;
-    right: -300px;
-    bottom: -825px;
-    background-color: transparent;
-    z-index: 1;
+  position: absolute;
+  right: -300px;
+  bottom: -825px;
+  background-color: transparent;
+  z-index: 1;
 }
 
 .goUpIcon {
@@ -227,7 +262,7 @@ button {
   width: fit-content;
   z-index: 4;
   background-color: transparent;
-  >img{
+  > img {
     background-color: transparent;
   }
 }
