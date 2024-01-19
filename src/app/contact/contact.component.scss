@@ -189,6 +189,7 @@ form {
     z-index: 5;
     > a {
       color: #89323b;
+      background-color: transparent;
       &:hover {
         text-decoration: underline;
       }
