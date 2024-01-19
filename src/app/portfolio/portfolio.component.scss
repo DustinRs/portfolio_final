@@ -150,13 +150,22 @@ button {
   border-top-left-radius: 32px;
   border-top-right-radius: 32px;
   background-color: white;
-  @include dFlex();
+  @include dFlex($fd:column,$g: 16px);
+  >h1 {
+    color: #e24244;
+    font-size: 48px;
+  }
   >p{
     margin: 0;
+    margin-left: 20px;
+    margin-right: 20px;
     padding: 0;
     background-color: white;
     color: #000000;
   }
+}
+.orange {
+  color: #e86f00 !important;
 }
 
 .d-none{
@@ -166,7 +175,7 @@ button {
 .zoom {
   
     transition: 0.5s ease-in-out 0s;
-    transform: scale(2);
+    transform: scale(1.7);
   
 }
 
