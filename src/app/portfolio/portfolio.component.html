@@ -1,11 +1,11 @@
 <section>
-    <img class="shadow" src="assets/imgs/portfolioPurpleShadow.png" alt="">
+  <img class="shadow" src="assets/imgs/portfolioPurpleShadow.png" alt="" />
   <div class="topPortfolio">
     <div class="lineRed"></div>
     <div>
       <h1>Portfolio</h1>
     </div>
-</div>
+  </div>
 
   <div>
     <p>
@@ -15,17 +15,110 @@
   </div>
   <div class="projectsDiv">
     <div>
-        <a href="https://dustin-rohrschneider.developerakademie.net/ElPolloLoco" target="_blank"><img class="img" src="assets/imgs/DemonQuest.png" alt=""></a>
+      <div
+        (mouseover)="showOverlayDemon()"
+        (mouseleave)="hideOverlayDemon()"
+        #overlayImgDemon
+        class="overlayImg d-none"
+      >
+        <div class="buttonDiv">
+          <button>Git hub</button>
+          <button>Test it</button>
+        </div>
+        <div class="descriptionOverlay">
+          <p>bfdasgbdkjhahkdkgfhahjk</p>
+        </div>
+      </div>
+      <a
+        href="https://dustin-rohrschneider.developerakademie.net/ElPolloLoco"
+        target="_blank"
+        ><img #imgDemon
+          (mouseover)="showOverlayDemon()"
+          (mouseleave)="hideOverlayDemon()"
+          class="img"
+          src="assets/imgs/DemonQuest.png"
+          alt=""
+      /></a>
     </div>
     <div>
-        <a href="https://dustin-rohrschneider.developerakademie.net/" target="_blank"><img class="img" src="assets/imgs/Join.png" alt=""></a>
+      <div
+        (mouseover)="showOverlayJoin()"
+        (mouseleave)="hideOverlayJoin()"
+        #overlayImgJoin
+        class="overlayImg d-none"
+      >
+        <div class="buttonDiv">
+          <button>Git hub</button>
+          <button>Test it</button>
+        </div>
+        <div class="descriptionOverlay">
+          <p>bfdasgbdkjhahkdkgfhahjk</p>
+        </div>
+      </div>
+      <a
+        href="https://dustin-rohrschneider.developerakademie.net/"
+        target="_blank"
+      >
+        <img #imgJoin
+          (mouseover)="showOverlayJoin()"
+          (mouseleave)="hideOverlayJoin()"
+          class="img"
+          src="assets/imgs/Join.png"
+          alt=""
+      /></a>
     </div>
     <div>
-        <a href="https://dustin-rohrschneider.developerakademie.net/PokeDex" target="_blank"><img class="img" src="assets/imgs/Pokedex.png" alt=""></a>
+      <div
+        (mouseover)="showOverlayPoke()"
+        (mouseleave)="hideOverlayPoke()"
+        #overlayImgPoke
+        class="overlayImg d-none"
+      >
+        <div class="buttonDiv">
+          <button>Git hub</button>
+          <button>Test it</button>
+        </div>
+        <div class="descriptionOverlay">
+          <p>bfdasgbdkjhahkdkgfhahjk</p>
+        </div>
+      </div>
+      <a
+        href="https://dustin-rohrschneider.developerakademie.net/PokeDex"
+        target="_blank"
+        ><img #imgPoke
+          (mouseover)="showOverlayPoke()"
+          (mouseleave)="hideOverlayPoke()"
+          class="img"
+          src="assets/imgs/Pokedex.png"
+          alt=""
+      /></a>
     </div>
     <div>
-        <a href="https://dustin-rohrschneider.developerakademie.net/" target="_blank"><img class="img" src="assets/imgs/Simple CRM.png" alt=""></a>
+      <div
+        (mouseover)="showOverlayCRM()"
+        (mouseleave)="hideOverlayCRM()"
+        #overlayImgCRM
+        class="overlayImg d-none"
+      >
+        <div class="buttonDiv">
+          <button>Git hub</button>
+          <button>Test it</button>
+        </div>
+        <div class="descriptionOverlay">
+          <p>bfdasgbdkjhahkdkgfhahjk</p>
+        </div>
+      </div>
+      <a
+        href="https://dustin-rohrschneider.developerakademie.net/"
+        target="_blank"
+        ><img #imgCRM
+          (mouseover)="showOverlayCRM()"
+          (mouseleave)="hideOverlayCRM()"
+          class="img"
+          src="assets/imgs/Simple CRM.png"
+          alt=""
+      /></a>
     </div>
   </div>
-  <img class="shadowBottom" src="assets/imgs/YellowShadow.png"  alt="">
+  <img class="shadowBottom" src="assets/imgs/YellowShadow.png" alt="" />
 </section>
