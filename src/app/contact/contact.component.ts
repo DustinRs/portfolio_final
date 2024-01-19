@@ -20,9 +20,24 @@ export class ContactComponent implements OnInit {
   @ViewChild('messageField') messageField!: ElementRef;
   @ViewChild('sendButton') sendButton!: ElementRef;
 
-ngOnInit(): void {
-  
-}
+  ngOnInit() {
+    document.addEventListener('click', this.handleDocumentClick);
+  }
+
+  private handleDocumentClick(event: Event) {
+    const clickedElement = event.target as HTMLElement;
+    if (!clickedElement.closest('input')) {
+      let inputs = document.querySelectorAll('input');
+      let textarea = document.querySelectorAll('input');
+
+      inputs.forEach(function (link) {
+        link.setAttribute('style', 'border: 2px solid #89323b;');
+      });
+      textarea.forEach(function (link) {
+        link.setAttribute('style', 'border: 2px solid #89323b;');
+      });
+    }
+  }
   async sendMail(){
     //
     console.log('Sending mail', this.myForm);

@@ -37,31 +37,33 @@
       ngNativeValidate
       #myForm
     >
-    <label id="labelName"><input
-        autocomplete="off"
-        id="name"
-        (click)="addNameListener()"
-        type="text"
-        name="name"
-        required
-        placeholder="Your name"
-        #nameField
-      /><i><img id="iconName" src="" alt="" /></i></label>
-      
+      <label id="labelName"
+        ><input
+          autocomplete="off"
+          id="name"
+          (click)="addNameListener()"
+          type="text"
+          name="name"
+          required
+          placeholder="Your name"
+          #nameField /><i><img id="iconName" src="" alt="" /></i
+      ></label>
+
       <div id="nameRequired">
         <span>Your name is required</span>
       </div>
-      <label id="labelEmail"><input
-        autocomplete="off"
-        id="email"
-        (click)="addEmailListener()"
-        type="email"
-        name="email"
-        required
-        placeholder="Your email"
-        #emailField
-      /><i><img id="iconEmail" src="" alt="" /></i></label>
-      
+      <label id="labelEmail"
+        ><input
+          autocomplete="off"
+          id="email"
+          (click)="addEmailListener()"
+          type="email"
+          name="email"
+          required
+          placeholder="Your email"
+          #emailField /><i><img id="iconEmail" src="" alt="" /></i
+      ></label>
+
       <div id="emailRequired">
         <span>Your email is required</span>
       </div>
@@ -84,11 +86,11 @@
       <label class="checkBox">
         <input type="checkbox" name="checkbox" required #checkboxField />
         <span class="checkmark"></span>
-        <span>
+        <span class="agreeText">
           I've read the
-          <span>
-            <a href="privacyPolicy" target="_blank">privacy policy</a>
-          </span>
+
+          <a href="privacyPolicy" target="_blank">privacy policy</a>
+
           and agree to the processing of my data as outlined.
         </span>
       </label>

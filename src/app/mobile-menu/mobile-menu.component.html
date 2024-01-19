@@ -1,0 +1,13 @@
+<div class="mobile-menu-container">
+    <div class="menu-icon" [ngClass]="{ 'open': menuOpened }" (click)="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <div class="menu" [ngClass]="{ 'open': menuOpened }">
+      <a href="#ABOUTME" (click)="toggleMenu()">About me</a>
+      <a href="#SKILLS" (click)="toggleMenu()">Skills</a>
+      <a href="#PORTFOLIO" (click)="toggleMenu()">Portfolio</a>
+      <a href="#CONTACT" (click)="toggleMenu()">Contact</a>
+    </div>
+  </div>

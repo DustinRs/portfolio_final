@@ -85,3 +85,122 @@ button {
   background-color: transparent;
   width: 100%;
 }
+
+@media (max-width: 1320px) {
+  .iconsSkills {
+    @include dFlex($fd: column, $ai: flex-start, $g: 40px);
+  }
+  
+  .rows {
+    @include dFlex($jc: flex-start, $ai: center, $g: 40px);
+  }
+  .skillLine {
+    width: 240px;
+  }
+}
+
+@media (max-width: 1280px) {
+h1{
+  font-size: 72px;
+}
+section{
+  font-size: 14px;
+}
+}
+
+@media (max-width: 1140px) {
+  h1{
+    font-size: 56px;
+    background-color: transparent;
+  }
+  section{
+    font-size: 12px;
+  }
+
+  .skillLine {
+    width: 200px;
+  }
+}
+
+@media (max-width: 1018px) {
+  section {
+    @include dFlex($fd:column-reverse,$jc: center, $ai: flex-end, $g: 80px);
+    padding: 80px 0 80px 0;
+    position: relative;
+    z-index: 2;
+    background-color: transparent !important;
+  }
+
+  .skillRight{
+    padding: 0;
+    >p {
+      margin: 0;
+    }
+    >button {
+      margin: 0;
+    }
+  }
+
+  .skillHead {
+    margin: 0;
+  }
+
+  .skillLine {
+    width: 45vw;
+  }
+
+  .iconsSkills {
+    position: relative;
+    right: 29vw;
+  }
+}
+
+@media (max-width: 970px) {
+  .iconsSkills {
+    right: 24vw;
+  }
+}
+
+@media (max-width: 740px) {
+  .iconsSkills {
+    right: 20vw;
+  }
+}
+
+@media (max-width: 640px) {
+  .iconsSkills {
+    right: 16vw;
+  }
+}
+@media (max-width: 550px) {
+  .iconsSkills {
+    right: 12vw;
+  }
+}
+@media (max-width: 480px) {
+  .iconsSkills {
+    right: 0;
+    left: -50px;
+  }
+}
+
+@media (max-width: 440px) {
+  .iconsSkills {
+    right: 0;
+    left: -36px;
+  }
+}
+
+@media (max-width: 430px) {
+  .iconsSkills {
+    right: 0;
+    left: -32px;
+  }
+}
+
+@media (max-width: 430px) {
+  .iconsSkills {
+    right: 0;
+    left: -36px;
+  }
+}

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { MobileMenuComponent } from '../mobile-menu/mobile-menu.component';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [],
+  imports: [MobileMenuComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })

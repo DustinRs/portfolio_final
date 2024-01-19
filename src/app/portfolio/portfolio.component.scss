@@ -13,15 +13,29 @@
 section {
   @include dFlex($fd: column, $ai: start, $g: 20px);
   position: relative;
-  z-index: 6;
+  z-index: 2;
   >div{
+    position: relative;
     margin: 0;
+    >div{
+      position: relative;
+      z-index: 3;
+      >p{
+        position: relative;
+        z-index: 3;
+      }
+    }
   }
 }
 
 .topPortfolio {
   @include dFlex($jc: start, $g: 40px);
-  
+  z-index: 3;
+  background-color: transparent;
+  >div{
+    background-color: transparent;
+    z-index: 3;
+  }
 }
 
 .shadow {
@@ -29,22 +43,27 @@ section {
   top: -200px;
   right: -360px;
  background-color: transparent;
+ z-index: 1;
 }
 
 p {
+  position: relative;
   padding-left: 120px;
   padding-bottom: 40px;
+  z-index: 4;
+  background-color: transparent;
 }
 
 h1 {
   font-size: 80px;
+  background-color: transparent;
 }
 
 .lineRed {
   width: 80px;
   height: 4px;
   border-radius: 4px;
-  background-color: #e24244;
+  background-color: #e24244 !important;
 }
 
 .projectsDiv {
@@ -56,7 +75,7 @@ h1 {
   background-color: transparent;
   width: 100%;
   > div {
-    width: max-content;
+    @include dFlex();
     border-radius: 16px;
     margin: 0;
     overflow: hidden;
@@ -77,4 +96,87 @@ h1 {
   left: -600px;
   bottom: -200px;
   background-color: transparent;
+}
+
+@media (max-width: 1439px){
+  .projectsDiv {
+    @include dFlex($fd:column,$jc:center,$g: 20px);
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+    
+}
+}
+
+@media (max-width: 1280px){
+  section{
+    font-size: 14px;
+  }
+  h1{
+    font-size: 72px;
+  }
+}
+
+@media (max-width: 1140px){
+  section{
+    font-size: 12px;
+  }
+  h1{
+    font-size: 56px;
+  }
+}
+
+@media (max-width: 860px){
+  .projectsDiv {
+    @include dFlex($fd:column,$jc:center,$ai:center,$g: 20px);
+  >div {
+    margin-right: 60px;
+    margin-left: 60px;
+  }
+
+}
+p {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.topPortfolio {
+  @include dFlex($jc: start, $g: 20px);
+}
+.lineRed {
+  width: 40px;
+  
+}
+}
+
+@media (max-width: 740px){
+  img {
+    width: 100%;
+  }
+  a {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px){
+  
+  h1{
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 420px){
+  
+  p {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .topPortfolio {
+    @include dFlex($jc: start, $g: 4px);
+  }
+  .lineRed {
+    width: 16px;
+    
+  }
 }

@@ -6,63 +6,147 @@
   gap: $g;
 }
 
-
 section {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 80px;
-    padding-top: 40px;
-    padding-bottom: 40px; 
-    position: relative;
-    z-index: 2;
-    background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 80px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  position: relative;
+  z-index: 2;
+  background-color: transparent;
 }
 
 .gapText {
-    @include dFlex($fd:column,$jc:flex-start, $g:24px);
-    position: relative;
-    z-index: 3;
-    background-color: transparent;
-    padding-left: 120px;
-    width: 60%;
+  @include dFlex($fd: column, $jc: flex-start, $g: 24px);
+  position: relative;
+  z-index: 3;
+  background-color: transparent;
+  padding-left: 120px;
+  width: 60%;
 }
 
 h1 {
-    font-size: 80px;
+  font-size: 80px;
 }
 
 .profilePicture {
-    position: relative;
-    right: 120px;
-    background-color: transparent;
+  position: relative;
+  right: 120px;
+  background-color: transparent;
 }
 
 .profileBack {
-    position: relative;
-    width: 100%;
-    top: 64px;
-    right: -56px;
-    z-index: 3;
-    background-color: transparent;
+  position: relative;
+  width: 100%;
+  top: 64px;
+  right: -78px;
+  z-index: 3;
+  background-color: transparent;
 }
 
 .profilePic {
-    position: absolute;
-    top: 64px;
-    right: 0;
-    z-index: 4;
-    width: 82%;
-    background-color: transparent;
+  position: absolute;
+  top: -69px;
+  right: 0;
+  z-index: 4;
+  width: 82%;
+  background-color: transparent;
 }
 
-.aboutMeText{
-    @include dFlex($jc:flex-start, $g: 16px);
-    >img {
-        width: 120px;
+.aboutMeText {
+  @include dFlex($jc: flex-start, $g: 16px);
+  > img {
+    width: 120px;
+  }
+}
+
+@media (max-width: 1280px) {
+  h1 {
+    font-size: 72px;
+  }
+  section {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1140px) {
+  h1 {
+    font-size: 56px;
+  }
+  section {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 1018px) {
+  section {
+    @include dFlex($fd: column, $g: 24px);
+    > div {
+      margin: 0;
     }
+  }
+  .gapText {
+    padding-left: 0;
+    width: 80%;
+  }
+
+  .profilePicture {
+    right: 0px;
+  }
+
+  .profileBack {
+    right: 0px;
+  }
+
+  .profilePic {
+    top: -132px;
+    right: 88px;
+  }
+}
+@media (max-width: 620px) {
+  .profileBack {
+    right: 0px;
+  }
+
+  .profilePic {
+    top: -44px;
+    right: 108px;
+    width: 70%;
+    height: auto;
+  }
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 48px;
+  }
 }
 
+@media (max-width: 450px) {
+  .profileBack {
+    top: 20px;
+    right: 0px;
+  }
 
+  .profilePic {
+    top: -61px;
+    right: 78px;
+    width: 70%;
+    height: auto;
+  }
+}
 
+@media (max-width: 360px) {
+  .profileBack {
+    top: -4px;
+    right: 0px;
+  }
 
+  .profilePic {
+    top: -73px;
+    right: 60px;
+    width: 70%;
+    height: auto;
+  }
+}

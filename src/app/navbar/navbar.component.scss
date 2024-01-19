@@ -13,10 +13,15 @@ nav {
   z-index: 10;
   @include dFlex($jc: space-between);
   height: 80px;
-  >div {
+  > div {
     margin: 0;
     padding-left: 120px;
     padding-right: 120px;
+  }
+  > app-mobile-menu{
+    z-index: 20;
+    margin: 0;
+    padding-right: 60px;
   }
 }
 
@@ -43,8 +48,49 @@ nav {
 .active {
   color: #c0620d;
   text-decoration: underline #8a313a 2px !important;
+  text-underline-offset: 8px;
 }
 
 .navA {
   text-decoration: none;
+}
+
+.navLinksMobile {
+  display: none;
+}
+
+
+
+@media (min-width: 861px) {
+  .mobileNavLinks{
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+  nav {
+    > div {
+      padding-left: 60px;
+    }
+  }
+  .navLinks {
+    display: none;
+  }
+  .mobileNavLinks {
+    
+  }
+}
+
+@media (max-width: 420px) {
+  nav {
+    > div {
+      padding-left: 20px;
+    }
+  }
+  .navLinks {
+    display: none;
+  }
+  app-mobile-menu{
+    padding-right: 20px !important;
+  }
 }

@@ -23,9 +23,7 @@ footer {
   left: 0;
   bottom: 0;
   z-index: 3;
-  >div {
-    padding-left: 120px;
-    padding-right: 120px;
+  > div {
     margin: 0;
   }
 }
@@ -38,8 +36,12 @@ footer {
     width: 120px;
   }
 }
+.divLeft {
+  padding-left: 120px;
+}
 .footerLinks {
   width: 240px;
+  margin-right: 120px !important;
 }
 
 .iconLinks {
@@ -48,5 +50,40 @@ footer {
   > a:hover {
     transition: 0.2s ease-in-out 0s;
     transform: scale(1.2);
+  }
+}
+
+.mobileImpressum {
+  display: none;
+}
+
+@media (max-width: 1040px) {
+  footer {
+    @include dFlex($fd: column, $g: 24px);
+  }
+
+  .divLeft {
+    padding-left: 0px;
+  }
+  .footerLinks {
+    width: 240px;
+    margin-right: 0px !important;
+    padding-right: 0;
+  }
+
+  .impressum {
+    display: none;
+  }
+
+  .mobileImpressum {
+    display: block;
+  }
+  .logo {
+    &:hover {
+      cursor: pointer;
+    }
+    > img {
+      width: 200px;
+    }
   }
 }
