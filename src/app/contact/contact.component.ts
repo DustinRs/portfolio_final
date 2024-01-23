@@ -39,11 +39,13 @@ export class ContactComponent implements OnInit {
     let messageField = this.messageField.nativeElement;
     let emailField = this.emailField.nativeElement;
     let sendButton = this.sendButton.nativeElement;
+    let button = (document.getElementById('Button') as HTMLButtonElement);
     
     nameField.disabled = true;
     messageField.disabled = true;
     emailField.disabled = true;
     sendButton.disabled = true;
+    button.classList.remove('buttonActive');
     //Animation anzeigen
     
     let fd = new FormData();
