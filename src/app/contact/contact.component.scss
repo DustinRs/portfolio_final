@@ -239,6 +239,16 @@ form {
 button {
   border: unset;
   border-radius: 8px;
+  background-color: #3a3a3a;
+  padding: 8px 16px 8px 16px;
+  transition: 0.2s ease-in-out 0s;
+  z-index: 3;
+  margin: 0;
+}
+
+.buttonActive {
+  border: unset;
+  border-radius: 8px;
   background-color: #e86f00;
   padding: 8px 16px 8px 16px;
   transition: 0.2s ease-in-out 0s;
@@ -356,6 +366,10 @@ button {
   .checkmark {
     margin: 0;
     position: relative;
+  }
+
+  .goUpIcon {
+    right: 60px;
   }
 }
 
@@ -497,6 +511,10 @@ button {
 
   .checkmark {
     width: 24px;
+  }
+
+  .goUpIcon {
+    right: 20px;
   }
 }
 

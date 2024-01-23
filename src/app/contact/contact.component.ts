@@ -18,58 +18,59 @@ export class ContactComponent implements OnInit {
   @ViewChild('myForm') myForm!: ElementRef;
   @ViewChild('nameField') nameField!: ElementRef;
   @ViewChild('messageField') messageField!: ElementRef;
+  @ViewChild('emailField') emailField!: ElementRef;
   @ViewChild('sendButton') sendButton!: ElementRef;
 
+  nameCheck = true;
+  messageCheck = true;
+  emailCheck = true;
+  checkBoxCheck = true;
+
   ngOnInit() {
-    document.addEventListener('click', this.handleDocumentClick);
+    this.addCheckBoxListener();
   }
 
-  private handleDocumentClick(event: Event) {
-    const clickedElement = event.target as HTMLElement;
-    if (!clickedElement.closest('input')) {
-      let inputs = document.querySelectorAll('input');
-      let textarea = document.querySelectorAll('input');
-
-      inputs.forEach(function (link) {
-        link.setAttribute('style', 'border: 2px solid #89323b;');
-      });
-      textarea.forEach(function (link) {
-        link.setAttribute('style', 'border: 2px solid #89323b;');
-      });
-    }
-  }
+  
+  
   async sendMail(){
     //
     console.log('Sending mail', this.myForm);
     let nameField = this.nameField.nativeElement;
     let messageField = this.messageField.nativeElement;
-    let sendButton = (document.getElementById('sendButton') as HTMLInputElement);
+    let emailField = this.emailField.nativeElement;
+    let sendButton = this.sendButton.nativeElement;
     
     nameField.disabled = true;
     messageField.disabled = true;
-    sendButton.setAttribute('disabled', 'true');
+    emailField.disabled = true;
+    sendButton.disabled = true;
     //Animation anzeigen
-
+    
     let fd = new FormData();
+    fd.append('email', emailField.value);
     fd.append('name', nameField.value);
     fd.append('message', messageField.value);
     // senden
-    await fetch('https://dustin-rohrschneider.de/dustin-rohrschneider.de/send_mail/send_mail.php',
+    await fetch('https://formspree.io/f/xdoqaena',
     {
       method:'POST',
-      body: fd
+      body: fd,
+      headers: {
+        'Accept': 'application/json'
+    }
     }
     );
     
     setTimeout(() => {
       nameField.disabled = false;
-    messageField.disabled = false;
-    sendButton.disabled = false;
+      messageField.disabled = false;
+      sendButton.disabled = false;
+      emailField.disabled = false;
+      window.location.href = 'successMail';
     }, 2000);
-    //Text anzeigen: Nachricht gesendet.
     
   }
-
+  
   
   addNameListener(){
     let input = document.getElementById('name');
@@ -78,12 +79,19 @@ export class ContactComponent implements OnInit {
   addMessageListener(){
     let input = document.getElementById('message');
     input?.addEventListener("input", this.validateMessageInput);
+    
   }
   addEmailListener(){
     let input = document.getElementById('email');
     input?.addEventListener("input", this.validateEmailInput);
   }
-
+  
+  addCheckBoxListener(){
+    let input = document.getElementById('checkbox');
+    input?.addEventListener("click", this.validateCheckboxInput);
+    input?.addEventListener("click", this.enableButton);
+  }
+  
   validateTitleInput(){
     let name = (document.getElementById('name') as HTMLInputElement)?.value;
     let nameField = document.getElementById('name');
@@ -95,6 +103,7 @@ export class ContactComponent implements OnInit {
       span?.setAttribute('style', 'display: block');
       margin?.setAttribute('style', 'margin-bottom: 0px');
       icon.src = 'assets/icons/iconError.png';
+      this.nameCheck = false;
     } else if (name?.length == 0) {
       nameField?.setAttribute('style', 'border: 2px solid #e86f00 !important;');
       span?.setAttribute('style', 'display: none');
@@ -114,11 +123,12 @@ export class ContactComponent implements OnInit {
     let span = document.getElementById('messageRequired');
     let margin = document.getElementById('labelMessage');
     let icon:string | any = document.getElementById('iconMessage');
-    if (message?.length < 20) {
+    if (message?.length < 10) {
       messageField?.setAttribute('style', 'border: 2px solid red !important;');
       span?.setAttribute('style', 'display: block');
       margin?.setAttribute('style', 'margin-bottom: 0px');
       icon.src = 'assets/icons/iconError.png';
+      this.messageCheck = false;
     } else if (message?.length == 0) {
       messageField?.setAttribute('style', 'border: 2px solid #e86f00 !important;');
       span?.setAttribute('style', 'display: none');
@@ -152,6 +162,27 @@ export class ContactComponent implements OnInit {
       span?.setAttribute('style', 'display: block');
       margin?.setAttribute('style', 'margin-bottom: 0px');
       icon.src = 'assets/icons/iconError.png';
+    }
+  }
+  
+  validateCheckboxInput() {
+    let checkbox = (document.getElementById('checkbox') as HTMLInputElement);
+    
+    if (checkbox instanceof HTMLInputElement && checkbox.checked) {
+      this.checkBoxCheck = true;
+    } else {
+      this.checkBoxCheck = false;
+    }
+  }
+
+  enableButton() {
+    let button = (document.getElementById('Button') as HTMLButtonElement);
+    if (this.checkBoxCheck) {
+      button.disabled = false;
+      button.classList.add('buttonActive');
+    } else {
+      button.disabled = true;
+      button.classList.remove('buttonActive');
     }
   }
 }

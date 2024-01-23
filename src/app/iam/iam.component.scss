@@ -166,6 +166,21 @@ button {
     margin-right: 60px;
   }
 }
+
+@media (max-width: 860px) {
+  section {
+    height: 100vh;
+    padding-top: 0;
+  }
+
+  .iamBottom {
+    padding-top: 0;
+    position: absolute;
+    bottom: 96px;
+    left: 0;
+  }
+}
+
 @media (max-width: 780px) {
   h1 {
     font-size: 40px;
@@ -241,5 +256,11 @@ button {
 @media (max-width: 420px) {
   .scrollDiv {
     margin-right: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .line {
+    width: 64px;
   }
 }
