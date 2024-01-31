@@ -2,6 +2,7 @@ import { preserveWhitespacesDefault } from '@angular/compiler';
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 interface OnInit {
   ngOnInit(): void
@@ -10,7 +11,7 @@ interface OnInit {
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule,ReactiveFormsModule],
+  imports: [RouterModule,FormsModule,ReactiveFormsModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })

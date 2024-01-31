@@ -48,7 +48,7 @@ h1 {
 
 .profilePic {
   position: absolute;
-  top: -69px;
+  top: -50px;
   right: 0;
   z-index: 4;
   width: 82%;
@@ -58,7 +58,7 @@ h1 {
 .aboutMeText {
   @include dFlex($jc: flex-start, $g: 16px);
   > img {
-    width: 120px;
+    width: 50px;
   }
 }
 
