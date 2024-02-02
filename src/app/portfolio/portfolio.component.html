@@ -162,6 +162,35 @@
           alt=""
       /></a>
     </div>
+    <div>
+      <div
+        (mouseover)="showOverlayBundesliga()"
+        (mouseleave)="hideOverlayBundesliga()"
+        #overlayImgBundesliga
+        class="overlayImg d-none"
+      >
+        <div class="buttonDiv">
+          <button onclick="window.open('https://github.com/DustinRs/bundesliga-app', '_blank');">Git hub</button>
+          <button onclick="window.open('https://dustin-rohrschneider.de/bundesliga-app/', '_blank');">Test it</button>
+        </div>
+        <div class="descriptionOverlay">
+          <h1>Bundesliga-App</h1>
+          <p>Based on a BundesligaAPI a simple app that provides information about standings, upcoming/ previous matches, news and statistics.</p>
+          <p class="orange">Angular | Firebase | Api</p>
+        </div>
+      </div>
+      <a
+        href="https://dustin-rohrschneider.developerakademie.net/"
+        target="_blank"
+        ><img
+          #imgBundesliga
+          (mouseover)="showOverlayBundesliga()"
+          (mouseleave)="hideOverlayBundesliga()"
+          class="img"
+          src="assets/imgs/bundesliga-app.png"
+          alt=""
+      /></a>
+    </div>
   </div>
   <img class="shadowBottom" src="assets/imgs/YellowShadow.png" alt="" />
 </section>

@@ -12,10 +12,12 @@ export class PortfolioComponent implements AfterViewInit {
   @ViewChild('overlayImgJoin') overlayImgJoin!: ElementRef;
   @ViewChild('overlayImgPoke') overlayImgPoke!: ElementRef;
   @ViewChild('overlayImgCRM') overlayImgCRM!: ElementRef;
+  @ViewChild('overlayImgBundesliga') overlayImgBundesliga!: ElementRef;
   @ViewChild('imgDemon') imgDemon!: ElementRef;
   @ViewChild('imgJoin') imgJoin!: ElementRef;
   @ViewChild('imgPoke') imgPoke!: ElementRef;
   @ViewChild('imgCRM') imgCRM!: ElementRef;
+  @ViewChild('imgBundesliga') imgBundesliga!: ElementRef;
   isMouseOver: boolean = false;
   isMouseLeave: boolean = true;
   ngAfterViewInit() {}
@@ -76,4 +78,19 @@ export class PortfolioComponent implements AfterViewInit {
       this.isMouseLeave = true;
     }
   }
+  showOverlayBundesliga() {
+    if (this.isMouseLeave) {
+      this.overlayImgBundesliga.nativeElement.classList.remove('d-none');
+      this.imgBundesliga.nativeElement.classList.add('zoom');
+      this.isMouseOver = true;
+    }
+  }
+  hideOverlayBundesliga() {
+    if (this.isMouseOver) {
+      this.overlayImgBundesliga.nativeElement.classList.add('d-none');
+      this.imgBundesliga.nativeElement.classList.remove('zoom');
+      this.isMouseLeave = true;
+    }
+  }
+  
 }
