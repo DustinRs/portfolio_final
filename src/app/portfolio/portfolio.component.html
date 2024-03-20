@@ -16,129 +16,92 @@
   <div class="projectsDiv">
     <div>
       <div
-        (mouseover)="showOverlayDemon()"
-        (mouseleave)="hideOverlayDemon()"
-        #overlayImgDemon
-        class="overlayImg d-none"
+      (mouseover)="showOverlayJoin()"
+      (mouseleave)="hideOverlayJoin()"
+      #overlayImgJoin
+      class="overlayImg d-none"
       >
-        <div class="buttonDiv">
-          <button
-            onclick="window.open('https://github.com/DustinRs/Game', '_blank');"
-          >
-            Git hub
-          </button>
-          <button
-            onclick="window.open('https://dustin-rohrschneider.developerakademie.net/DemonQuest', '_blank');"
-          >
-            Test it
-          </button>
-        </div>
-        <div class="descriptionOverlay">
-          <h1>DemonQuest</h1>
-          <p>
-            Jump, run and throw game based on object-oriented approach. Help the
-            little Demon to find coins and bones, to fight against the other
-            monsters and become worthy to fight for the mighty Darkelf.
-          </p>
-          <p class="orange">HTML | CSS | JavaScript</p>
-        </div>
-      </div>
-      <a
-        href="https://dustin-rohrschneider.developerakademie.net/ElPolloLoco"
-        target="_blank"
-        ><img
-          #imgDemon
-          (mouseover)="showOverlayDemon()"
-          (mouseleave)="hideOverlayDemon()"
-          class="img"
-          src="assets/imgs/DemonQuest.png"
-          alt=""
-      /></a>
-    </div>
-    <div>
-      <div
-        (mouseover)="showOverlayJoin()"
-        (mouseleave)="hideOverlayJoin()"
-        #overlayImgJoin
-        class="overlayImg d-none"
-      >
-        <div class="buttonDiv">
+      <div class="buttonDiv">
           <button
             onclick="window.open('https://github.com/DustinRs/Join', '_blank');"
           >
             Git hub
           </button>
           <button
-            onclick="window.open('https://dustin-rohrschneider.developerakademie.net/', '_blank');"
+          onclick="window.open('https://dustin-rohrschneider.developerakademie.net/', '_blank');"
           >
-            Test it
-          </button>
-        </div>
-        <div class="descriptionOverlay">
-          <h1>Join</h1>
-          <p>
-            Task manager inspired by the Kanban System. Create and organize
-            tasks using drag and drop functions, assign users and categories.
-          </p>
-          <p class="orange">HTML | CSS | JavaScript</p>
-        </div>
+          Test it
+        </button>
       </div>
-      <a
-        href="https://dustin-rohrschneider.developerakademie.net/"
-        target="_blank"
-      >
-        <img
-          #imgJoin
-          (mouseover)="showOverlayJoin()"
-          (mouseleave)="hideOverlayJoin()"
-          class="img"
-          src="assets/imgs/Join.png"
-          alt=""
-      /></a>
-    </div>
-    <div>
-      <div
-        (mouseover)="showOverlayPoke()"
-        (mouseleave)="hideOverlayPoke()"
-        #overlayImgPoke
-        class="overlayImg d-none"
-      >
-        <div class="buttonDiv">
-          <button
-            onclick="window.open('https://github.com/DustinRs/PokeDex', '_blank');"
-          >
-            Git hub
-          </button>
-          <button
-            onclick="window.open('https://dustin-rohrschneider.developerakademie.net/PokeDex', '_blank');"
-          >
-            Test it
-          </button>
-        </div>
-        <div class="descriptionOverlay">
-          <h1>Pokédex</h1>
-          <p>Based on the PokéAPI a simple library that provides and catalogues pokemon information.</p>
-          <p class="orange">JavaScript | HTML | CSS | Api </p>
-        </div>
+      <div class="descriptionOverlay">
+        <h1>Join</h1>
+        <p>
+          Task manager inspired by the Kanban System. Create and organize
+          tasks using drag and drop functions, assign users and categories.
+        </p>
+        <p class="orange">HTML | CSS | JavaScript</p>
       </div>
-      <a
-        href="https://dustin-rohrschneider.developerakademie.net/PokeDex"
-        target="_blank"
-        ><img
-          #imgPoke
-          (mouseover)="showOverlayPoke()"
-          (mouseleave)="hideOverlayPoke()"
-          class="img"
-          src="assets/imgs/Pokedex.png"
-          alt=""
-      /></a>
     </div>
-    <!-- <div>
+    <a
+    href="https://dustin-rohrschneider.developerakademie.net/"
+    target="_blank"
+    >
+    <img
+    #imgJoin
+    (mouseover)="showOverlayJoin()"
+    (mouseleave)="hideOverlayJoin()"
+    class="img"
+    src="assets/imgs/Join.png"
+    alt=""
+    /></a>
+  </div>
+  <div>
+    <div
+      (mouseover)="showOverlayDemon()"
+      (mouseleave)="hideOverlayDemon()"
+      #overlayImgDemon
+      class="overlayImg d-none"
+    >
+      <div class="buttonDiv">
+        <button
+          onclick="window.open('https://github.com/DustinRs/Game', '_blank');"
+        >
+          Git hub
+        </button>
+        <button
+          onclick="window.open('https://dustin-rohrschneider.developerakademie.net/DemonQuest', '_blank');"
+        >
+          Test it
+        </button>
+      </div>
+      <div class="descriptionOverlay">
+        <h1>DemonQuest</h1>
+        <p>
+          Jump, run and throw game based on object-oriented approach. Help the
+          little Demon to find coins and bones, to fight against the other
+          monsters and become worthy to fight for the mighty Darkelf.
+        </p>
+        <p class="orange">HTML | CSS | JavaScript</p>
+      </div>
+    </div>
+    <a
+      href="https://dustin-rohrschneider.developerakademie.net/ElPolloLoco"
+      target="_blank"
+      ><img
+        #imgDemon
+        (mouseover)="showOverlayDemon()"
+        (mouseleave)="hideOverlayDemon()"
+        class="img"
+        src="assets/imgs/DemonQuest.png"
+        alt=""
+    /></a>
+  </div>
+  <!-- <div>
       <div
-        (mouseover)="showOverlayCRM()"
-        (mouseleave)="hideOverlayCRM()"
-        #overlayImgCRM
-        class="overlayImg d-none"
+      (mouseover)="showOverlayCRM()"
+      (mouseleave)="hideOverlayCRM()"
+      #overlayImgCRM
+      class="overlayImg d-none"
       >
         <div class="buttonDiv">
           <button onclick="window.open('https://github.com/DustinRs/simple-crm', '_blank');">Git hub</button>
@@ -151,46 +114,83 @@
         </div>
       </div>
       <a
-        href="https://dustin-rohrschneider.developerakademie.net/"
-        target="_blank"
-        ><img
-          #imgCRM
-          (mouseover)="showOverlayCRM()"
-          (mouseleave)="hideOverlayCRM()"
-          class="img"
-          src="assets/imgs/Simple CRM.png"
-          alt=""
+      href="https://dustin-rohrschneider.developerakademie.net/"
+      target="_blank"
+      ><img
+      #imgCRM
+      (mouseover)="showOverlayCRM()"
+      (mouseleave)="hideOverlayCRM()"
+      class="img"
+      src="assets/imgs/Simple CRM.png"
+      alt=""
       /></a>
     </div> -->
     <div>
       <div
-        (mouseover)="showOverlayBundesliga()"
-        (mouseleave)="hideOverlayBundesliga()"
-        #overlayImgBundesliga
-        class="overlayImg d-none"
+      (mouseover)="showOverlayBundesliga()"
+      (mouseleave)="hideOverlayBundesliga()"
+      #overlayImgBundesliga
+      class="overlayImg d-none"
       >
-        <div class="buttonDiv">
-          <button onclick="window.open('https://github.com/DustinRs/bundesliga-app', '_blank');">Git hub</button>
-          <button onclick="window.open('https://dustin-rohrschneider.de/bundesliga-app/', '_blank');">Test it</button>
-        </div>
-        <div class="descriptionOverlay">
-          <h1>Bundesliga-App</h1>
-          <p>Based on a BundesligaAPI a simple app that provides information about standings, upcoming/ previous matches, news and statistics.</p>
-          <p class="orange">Angular | Firebase | Api</p>
-        </div>
+      <div class="buttonDiv">
+        <button onclick="window.open('https://github.com/DustinRs/bundesliga-app', '_blank');">Git hub</button>
+        <button onclick="window.open('https://dustin-rohrschneider.de/bundesliga-app/', '_blank');">Test it</button>
       </div>
-      <a
-        href="https://dustin-rohrschneider.developerakademie.net/"
-        target="_blank"
-        ><img
-          #imgBundesliga
-          (mouseover)="showOverlayBundesliga()"
-          (mouseleave)="hideOverlayBundesliga()"
-          class="img"
-          src="assets/imgs/bundesliga-app.png"
-          alt=""
-      /></a>
+      <div class="descriptionOverlay">
+        <h1>Bundesliga-App</h1>
+        <p>Based on a BundesligaAPI a simple app that provides information about standings, upcoming/ previous matches, news and statistics.</p>
+        <p class="orange">Angular | Firebase | Api</p>
+      </div>
     </div>
+    <a
+    href="https://dustin-rohrschneider.developerakademie.net/"
+    target="_blank"
+    ><img
+    #imgBundesliga
+    (mouseover)="showOverlayBundesliga()"
+    (mouseleave)="hideOverlayBundesliga()"
+    class="img"
+    src="assets/imgs/bundesliga-app.png"
+    alt=""
+    /></a>
   </div>
-  <img class="shadowBottom" src="assets/imgs/YellowShadow.png" alt="" />
+  <div>
+    <div
+      (mouseover)="showOverlayPoke()"
+      (mouseleave)="hideOverlayPoke()"
+      #overlayImgPoke
+      class="overlayImg d-none"
+    >
+      <div class="buttonDiv">
+        <button
+          onclick="window.open('https://github.com/DustinRs/PokeDex', '_blank');"
+        >
+          Git hub
+        </button>
+        <button
+          onclick="window.open('https://dustin-rohrschneider.developerakademie.net/PokeDex', '_blank');"
+        >
+          Test it
+        </button>
+      </div>
+      <div class="descriptionOverlay">
+        <h1>Pokédex</h1>
+        <p>Based on the PokéAPI a simple library that provides and catalogues pokemon information.</p>
+        <p class="orange">JavaScript | HTML | CSS | Api </p>
+      </div>
+    </div>
+    <a
+      href="https://dustin-rohrschneider.developerakademie.net/PokeDex"
+      target="_blank"
+      ><img
+        #imgPoke
+        (mouseover)="showOverlayPoke()"
+        (mouseleave)="hideOverlayPoke()"
+        class="img"
+        src="assets/imgs/Pokedex.png"
+        alt=""
+    /></a>
+  </div>
+</div>
+<img class="shadowBottom" src="assets/imgs/YellowShadow.png" alt="" />
 </section>

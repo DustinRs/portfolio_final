@@ -8,7 +8,7 @@
 
 
 section {
-  @include dFlex($jc: center, $g: 80px);
+  @include dFlex($jc: start, $g: 80px);
   padding: 160px 0 160px 120px;
   position: relative;
   z-index: 2;
