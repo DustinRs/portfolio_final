@@ -83,14 +83,15 @@ h1 {
     &:hover {
       cursor: pointer;
     }
-    > a {
+    
       > img {
         display: block;
         
       }
-    }
+    
   }
 }
+
 
 .shadowBottom {
   position: absolute;
